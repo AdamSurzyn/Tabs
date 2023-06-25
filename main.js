@@ -1,6 +1,14 @@
+import { tabsFunctionality } from "./modules";
+
 const addedEelements = [
   {
     label: "one",
+    contentTitle: "one title",
+    content: "bruuuuh",
+  },
+  {
+    label: "two",
+    contentTitle: "twp title",
     content: "bruuuuh",
   },
 ];
@@ -21,8 +29,15 @@ class Tab {
     element.id = this.config.label;
     this.findContainer().appendChild(element)
   }
+
+  tabHi
 }
 
-const testTab = new Tab(".tabs-container", addedEelements[0])
+function addTabs(tab, index){
+  let testTab = new Tab(".tabs-container", addedEelements[index])
+  testTab.addElementToContainer()
+}
 
-testTab.addElementToContainer()
+addedEelements.forEach(addTabs)
+
+console.log(tabsFunctionality.whichElement())

@@ -7,5 +7,12 @@ body {
   border-style: solid;
   border-width: 2px;
   display: grid;
+  grid-template-columns: minmax(150px,33%);
+  grid-template-rows: auto;
+}
+
+.tabs-container div{
+  min-height: 100%;
+  
 }
 
