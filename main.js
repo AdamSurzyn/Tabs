@@ -1,5 +1,3 @@
-import { tabsFunctionality } from "./modules";
-
 const addedEelements = [
   {
     label: "one",
@@ -9,6 +7,11 @@ const addedEelements = [
   {
     label: "two",
     contentTitle: "twp title",
+    content: "bruuuuh",
+  },
+  {
+    label: "three",
+    contentTitle: "three title",
     content: "bruuuuh",
   },
 ];
@@ -30,14 +33,47 @@ class Tab {
     this.findContainer().appendChild(element)
   }
 
-  tabHi
+  addOnclickHighlight() {
+    const element = document.querySelector(`#${this.config.label}`)
+
+    element.addEventListener("click", function(){
+      highlightElement(element)
+      showElementsContent(element)
+    })
+  }
+
 }
 
-function addTabs(tab, index){
-  let testTab = new Tab(".tabs-container", addedEelements[index])
+function addTabs(testTab, index){
+  testTab = new Tab(".tabs-container", addedEelements[index])
   testTab.addElementToContainer()
+  testTab.addOnclickHighlight()
+}
+
+function highlightElement(element){
+  addedEelements.forEach((el)=>{
+    let targetElement = document.querySelector(`#${el.label}`)
+    targetElement.style.backgroundColor = "white";
+  })
+
+  if (element === undefined){
+    element = document.querySelector("#one")
+  }
+  element.style.backgroundColor = "hsl(178, 9%, 81%)"
+
+}
+
+function showElementsContent(element){
+  const tabTitleElement = document.querySelector(".tab-title")
+  const tabContentElement = document.querySelector(".tab-content")
+  addedEelements.forEach((tab)=>{
+    if(element.id === tab.label){
+      tabTitleElement.innerHTML = tab.contentTitle
+      tabContentElement.innerHTML = tab.content
+    }
+  })
+
 }
 
 addedEelements.forEach(addTabs)
-
-console.log(tabsFunctionality.whichElement())
+highlightElement()
