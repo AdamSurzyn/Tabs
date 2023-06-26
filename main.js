@@ -2,17 +2,17 @@ const addedEelements = [
   {
     label: "one",
     contentTitle: "one title",
-    content: "bruuuuh",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     label: "two",
     contentTitle: "twp title",
-    content: "bruuuuh",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     label: "three",
     contentTitle: "three title",
-    content: "bruuuuh",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
 ];
 
@@ -28,7 +28,7 @@ class Tab {
 
   addElementToContainer() {
     const element = document.createElement("div");
-    element.innerHTML = this.config.content;
+    element.innerHTML = this.config.contentTitle;
     element.id = this.config.label;
     this.findContainer().appendChild(element)
   }
