@@ -1,17 +1,17 @@
 const addedEelements = [
   {
     label: "one",
-    contentTitle: "one title",
+    contentTitle: "One title",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     label: "two",
-    contentTitle: "twp title",
+    contentTitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
   {
     label: "three",
-    contentTitle: "three title",
+    contentTitle: "Three title",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
   },
 ];
@@ -59,13 +59,16 @@ function highlightElement(element){
   if (element === undefined){
     element = document.querySelector("#one")
   }
-  element.style.backgroundColor = "hsl(178, 9%, 81%)"
+  element.style.backgroundColor = "#FEE68E"
 
 }
 
 function showElementsContent(element){
   const tabTitleElement = document.querySelector(".tab-title")
   const tabContentElement = document.querySelector(".tab-content")
+  if (element === undefined){
+    element = document.querySelector("#one")
+  }
   addedEelements.forEach((tab)=>{
     if(element.id === tab.label){
       tabTitleElement.innerHTML = tab.contentTitle
@@ -77,3 +80,4 @@ function showElementsContent(element){
 
 addedEelements.forEach(addTabs)
 highlightElement()
+showElementsContent()
