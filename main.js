@@ -60,6 +60,7 @@ function highlightElement(element){
     element = document.querySelector("#one")
   }
   element.style.backgroundColor = "#FEE68E"
+  // i/o changing the style, i should swap a class with this background color.
 
 }
 
